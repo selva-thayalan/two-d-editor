@@ -1,0 +1,19 @@
+.app{
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-panel{
+    
+}
+
+.resize-handle{
+    height: 100%;
+    width: 5px;
+    background-color: yellowgreen;
+    cursor: col-resize;
+}
+
+.right-panel{
+    flex: 1 1 0%;
+}
