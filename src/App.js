@@ -30,7 +30,7 @@ function App() {
           <canvas width="200" height="100" style={{backgroundColor: canvasBG}}>
           </canvas>
         </div>
-        <div className="element-details absolute">
+        <div className="element-details absolute m_5">
           <span>
             <p className="inline_block v_align_m">Background {canvasBG}</p>
             <div className="inline_block v_align_m selected-bg m_l_5" style={{backgroundColor: canvasBG}}></div>
