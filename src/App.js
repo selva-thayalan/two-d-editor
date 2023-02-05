@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react';
 import './App.css';
 import './Common.css';
+import ColorSelector from './components/ColorSelector';
 
 function App() {
   const isMouseDown = useRef(false);//To save the current state of the mouse down to prevent the mouse move function updating the width of the left panel.
 
   const [leftPanelWidth, setLeftPanelWidth] = useState("50%");//To update the width of the left panel div when resize with the handler.
-  const [canvasBG, setCanvasBG] = useState("#000000");
+  const [canvasBG, setCanvasBG] = useState("black");
 
   const onMouseDownHandler = function () {//We need to set the isMouseDown flag true to mouse move handler update the left panel width.
     isMouseDown.current = true;
@@ -43,7 +44,7 @@ function App() {
         <div className="style-edit-cont  p_10">
           <div className="style-option-cont m_5">
             <label htmlFor="bg-clr-picker">Background</label>
-            <input id="bg-clr-picker" className="color-picker m_l_5" type="color" onChange={(e) => setCanvasBG(e.target.value)}></input>
+            <ColorSelector customId="bg-clr-picker" customClass="inline_block v_align_m m_l_5" defaultValue={canvasBG} onChange={setCanvasBG}/>
           </div>
         </div>
       </div>
