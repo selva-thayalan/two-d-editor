@@ -6,6 +6,7 @@ function App() {
   const isMouseDown = useRef(false);//To save the current state of the mouse down to prevent the mouse move function updating the width of the left panel.
 
   const [leftPanelWidth, setLeftPanelWidth] = useState("50%");//To update the width of the left panel div when resize with the handler.
+  const [canvasBG, setCanvasBG] = useState("#000000");
 
   const onMouseDownHandler = function () {//We need to set the isMouseDown flag true to mouse move handler update the left panel width.
     isMouseDown.current = true;
@@ -24,13 +25,27 @@ function App() {
   return (
     <div className="app flex" onMouseMove={onMouseMoveHandler} onMouseUp={onMouseUpHandler}>
       <div className="left-panel" style={{width: leftPanelWidth}}>
-
+        <div className="left-view-port flex flex-cntr">
+          <canvas width="200" height="100" style={{backgroundColor: canvasBG}}>
+          </canvas>
+        </div>
+        <div className="element-details absolute">
+          <span>
+            <p className="inline_block v_align_m">Background {canvasBG}</p>
+            <div className="inline_block v_align_m selected-bg m_l_5" style={{backgroundColor: canvasBG}}></div>
+          </span>
+        </div>
       </div>
 
-      <div className="resize-handle" onMouseDown={onMouseDownHandler}></div>
+      <div className="resize-handle flex flex-cntr" onMouseDown={onMouseDownHandler}>||</div>
 
       <div className="right-panel">
-
+        <div className="style-edit-cont  p_10">
+          <div className="style-option-cont m_5">
+            <label htmlFor="bg-clr-picker">Background</label>
+            <input id="bg-clr-picker" className="color-picker m_l_5" type="color" onChange={(e) => setCanvasBG(e.target.value)}></input>
+          </div>
+        </div>
       </div>
     </div>
   );

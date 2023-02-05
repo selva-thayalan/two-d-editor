@@ -1,19 +1,61 @@
+:root{
+    --primary-bg-color: #111111;
+    --secondary-bg-color: #000000;
+    --secondary-asset-color: #FFFFFF;
+    --primary-text-color: #CCCCCC;
+}
+
 .app{
     width: 100vw;
     height: 100vh;
+    color: var(--primary-text-color);
+    user-select: none;
+}
+
+.left-view-port{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .left-panel{
-    
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-bg-color);
 }
 
 .resize-handle{
     height: 100%;
-    width: 5px;
-    background-color: yellowgreen;
+    width: 6px;
+    font-size: 9px;
+    background-color: #373737;
     cursor: col-resize;
 }
 
 .right-panel{
     flex: 1 1 0%;
+    background-color: var(--primary-bg-color);
+}
+
+canvas{
+    border: 1px solid var(--secondary-asset-color);
+}
+
+.element-details{
+    font-size: 12px;
+    bottom: 0;
+}
+
+.selected-bg{
+    border: 1px solid var(--secondary-asset-color);
+    height: 15px;
+    width: 20px;
+}
+
+.color-picker{
+    width: 30px;
+    height: 25px;
 }

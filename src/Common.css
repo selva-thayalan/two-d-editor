@@ -1,3 +1,32 @@
 .flex{
     display: flex;
 }
+
+.flex-cntr{
+    align-items: center;
+    justify-content: center;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.inline_block{
+    display: inline-block;
+}
+
+.v_align_m{
+    vertical-align: middle;
+}
+
+.m_l_5{
+    margin-left: 5px;
+}
+
+.m_5{
+    margin: 5px;
+}
+
+.p_10{
+    padding: 10px;
+}
